@@ -4,6 +4,7 @@
 
 .teamList{
   display:flex;
+  flex-wrap:wrap;
   width:100%;
   .teamMember{
     padding: 10px;

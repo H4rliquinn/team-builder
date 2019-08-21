@@ -1,4 +1,4 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 import './App.scss';
 import TeamList from './components/TeamList.js'
 import Form from './components/Form.js'
@@ -19,7 +19,7 @@ function App() {
 
     <div className="App">
         <h1>TEAM LIST</h1>
-        <TeamList team={teamData}/>
+        <TeamList team={team}/>
         <Form addMember={addMember} />
     </div>
   );
