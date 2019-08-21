@@ -4,13 +4,13 @@ function Form(props){
     const [teamMember,setTeamMember]=useState({ name: "", email: "", position: "" });
     // console.log(props);
     // console.log(teamMember)
-    function changeHandler(e){
+    const changeHandler=(e)=>{
         // console.log(e.target.value);
         setTeamMember({...teamMember, [e.target.name]:e.target.value});
         // console.log(team)
-      }
+    }
     
-      function submitHandler(e){
+    const submitHandler=(e)=>{
         e.preventDefault();
         props.addMember(teamMember);
         setTeamMember({ name: "", email: "", position: "" })
