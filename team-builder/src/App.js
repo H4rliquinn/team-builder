@@ -8,19 +8,27 @@ import Form from './components/Form.js'
 function App() {
 
   const [team,setTeam]=useState(teamData);
+  const [memberToEdit,setmemberToEdit]=useState(null);
 
   const addMember = (member)=>{
-    console.log(team,member);
+    // console.log(team,member);
     setTeam([...team, member]);
-    console.log("New Team",team);
+    // console.log("New Team",team);
   }
+
+const editMember=(e)=>{
+  // console.log(e.target.value,team);
+  const foundMember = team.find((item)=>{
+    return item.name===e.target.value,team;
+  })
+}
 
   return (
 
     <div className="App">
         <h1>TEAM LIST</h1>
-        <TeamList team={team}/>
-        <Form addMember={addMember} />
+        <TeamList team={team}  editMember={editMember}/>
+        <Form addMember={addMember} memberToEdit={memberToEdit}/>
     </div>
   );
 }

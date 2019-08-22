@@ -10,6 +10,7 @@ function TeamList(props){
                         <div className="name" >{item.name}</div>
                         <div className="email">{item.email}</div>
                         <div className="position">{item.position}</div>
+                        <div className="editButton"><button value={item.name} onClick={props.editMember} type="button">Edit</button></div>
                     </div>  
                 )
             })}

@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 
 function Form(props){
     const [teamMember,setTeamMember]=useState({ name: "", email: "", position: "" });
+    
     // console.log(props);
     // console.log(teamMember)
     const changeHandler=(e)=>{
@@ -17,9 +18,16 @@ function Form(props){
         // console.log(e);
       }
 
+    useEffect(()=>{
+        if (props.memberToEdit){
+            console.log("edit!");
+            setTeamMember(props.memberToEdit);
+        }
+    },[props.memberToEdit]);
+
     return(
         <div className="form">
-            <form onSubmit={(e)=>{submitHandler(e)}}>
+            <form onSubmit={submitHandler}>
                 <div className="formItem">
                     <label htmlFor="name">Name: </label>
                     <input onChange={changeHandler} name="name" type="text" placeholder="Name Here" value={teamMember.name} />
