@@ -1,0 +1,21 @@
+.App {
+  text-align: center;
+}
+
+.teamList{
+  display:flex;
+  flex-wrap:wrap;
+  width:100%;
+  .teamMember{
+    padding: 10px;
+    background-color: pink;
+    width:300px;
+    border:1px solid blue;
+    margin:20px auto;
+  }
+}
+
+.formItem{
+  margin:10px 15px;
+  padding:0px 15px;
+}
